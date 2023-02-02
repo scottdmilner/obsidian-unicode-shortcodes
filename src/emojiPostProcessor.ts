@@ -1,5 +1,5 @@
 import { MarkdownPostProcessor } from "obsidian";
-import { emoji } from "./emojiList";
+import { unicode as emoji } from "./unicodeList";
 
 export default class EmojiMarkdownPostProcessor {
 
@@ -14,7 +14,7 @@ export default class EmojiMarkdownPostProcessor {
 		if (el.hasChildNodes()){
 			el.childNodes.forEach((child: ChildNode) => this.emojiReplace(shortcode, child as HTMLElement));
 		} else {
-			el.textContent = el.textContent.replace(shortcode, emoji[shortcode] ?? shortcode);
+			el.textContent = el.textContent.replace(shortcode as string, emoji[shortcode] ?? shortcode);
 		}
 	}
 

@@ -1,6 +1,6 @@
 import { Platform, Plugin, EditorSuggest, Editor, EditorPosition, TFile, EditorSuggestTriggerInfo, EditorSuggestContext } from 'obsidian';
 import DefinitionListPostProcessor from './definitionListPostProcessor';
-import { emoji } from './emojiList';
+import { unicode as emoji } from './unicodeList';
 import EmojiMarkdownPostProcessor from './emojiPostProcessor';
 import { DEFAULT_SETTINGS, EmojiPluginSettings, EmojiPluginSettingTab } from './settings';
 import { checkForInputBlock } from './util';
@@ -79,7 +79,6 @@ class EmojiSuggester extends EditorSuggest<string> {
 	renderSuggestion(suggestion: string, el: HTMLElement): void {
 		const outer = el.createDiv({ cls: "ES-suggester-container" });
 		outer.createDiv({ cls: "ES-shortcode" }).setText(suggestion.replace(/:/g, ""));
-		//@ts-expect-error
 		outer.createDiv({ cls: "ES-emoji" }).setText(emoji[suggestion]);
 	}
 
