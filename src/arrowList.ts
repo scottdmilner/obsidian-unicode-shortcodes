@@ -18,5 +18,5 @@ export const arrow = JSON.parse(`{
     ":dotted_left:": "⇠",
     ":dotted_up:": "⇡",
     ":dotted_right:": "⇢",
-    ":dotted_down:": "⇣",
+    ":dotted_down:": "⇣"
 }`);
